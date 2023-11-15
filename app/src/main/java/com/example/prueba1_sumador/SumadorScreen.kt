@@ -6,6 +6,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
@@ -28,7 +29,7 @@ enum class SumadorScreen(@StringRes val title: Int) {
 fun SumadorApp(
 
     ) {
-    val viewModel : SumaViewModel = viewModel(),
+    val viewModel : SumaViewModel = viewModel()
     val navController: NavHostController =  rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     // Get the name of the current screen
@@ -40,7 +41,7 @@ fun SumadorApp(
         NavHost(
             navController = navController,
             startDestination = SumadorScreen.Start,
-            modifier = Modifier.padding(8dp)){
+            modifier = Modifier.padding(8.dp)){
 
             composable("Inicio"){
                 SumaScreen(  viewModel,navController,modifier = Modifier)

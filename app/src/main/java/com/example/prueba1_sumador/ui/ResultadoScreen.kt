@@ -28,7 +28,7 @@ fun ResultadoScreen( viewModel: SumaViewModel,onBackClicked: NavController , mod
 
         // Botón para volver a la pantalla de entrada
         Button(
-            onClick = onBackClicked,
+            onClick = { onBackClicked.popBackStack() } ,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp)
