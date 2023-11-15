@@ -19,9 +19,10 @@ fun ResultadoScreen( viewModel: SumaViewModel,onBackClicked: NavController , mod
             .fillMaxWidth()
             .padding(16.dp)
     ) {
-        OutlinedTextField(value = viewModel.resultado )
+        OutlinedTextField(value = viewModel.resultado, readOnly = true, modifier = Modifier
+            .fillMaxWidth() )
         val guardadosAnt= buildString { for (res in viewModel.guardado ){append("${res}\n") }}
-        OutlinedTextField(value = guardadosAnt , modifier = Modifier
+        OutlinedTextField(value = guardadosAnt, readOnly = true , modifier = Modifier
             .fillMaxWidth()
         )
 
