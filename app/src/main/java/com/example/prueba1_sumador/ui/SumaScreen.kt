@@ -17,6 +17,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.prueba1_sumador.R
 
@@ -41,13 +42,13 @@ fun SumaScreen( viewModel: SumaViewModel,
         Column(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(dimensionResource(8 dp))
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
         ) {
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
-            OutlinedTextField( value= viewModel.variable1 ,onValueChange = {viewModel.variable1= it}, modifier = Modifier.height(8dp))
+            OutlinedTextField( value= viewModel.variable1 ,onValueChange = {viewModel.variable1= it}, modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
-            OutlinedTextField(value= viewModel.variable2,onValueChange={viewModel.variable2 = it},modifier = Modifier.height(8dp))
-            Spacer(modifier = Modifier.height(8dp))
+            OutlinedTextField(value= viewModel.variable2,onValueChange={viewModel.variable2 = it},modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
+            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
             Button(  onClick ={
                 viewModel.calculate()
                 navController.navigate("resultado")
